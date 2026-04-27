@@ -5,21 +5,19 @@ const SUPABASE_ANON_KEY = 'sb_publishable_mkHFaI9DVbE2XKkA3c7IMQ_1jW5cna9';
 
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// DOM ELEMENTS
+
 const form = document.getElementById('questionnaireForm');
 const submitBtn = document.getElementById('submitBtn');
 const statusMsg = document.getElementById('statusMsg');
 
-// FORM SUBMISSION HANDLER
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
-    // UI State: Loading
+   
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
     statusMsg.style.display = 'none';
     
-    // Get form data
+
     const formData = new FormData(form);
     const data = {
         name: formData.get('name'),

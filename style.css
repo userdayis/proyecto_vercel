@@ -28,7 +28,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Reddish Background Image */
+
 body::before {
     content: '';
     position: fixed;
